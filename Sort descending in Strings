@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<ctype.h>
+int main(){
+    char str[100],temp;
+    int i,j,l;
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str,"\n")]='\0';
+    l=strlen(str);
+    for(i=0;i<l;i++){
+        for(j=i+1;j<l;j++){
+            if(str[i]<str[j]){
+                temp=str[i];
+                str[i]=str[j];
+                str[j]=temp;
+            }
+        }
+    }
+    printf("%s",str);
+}
