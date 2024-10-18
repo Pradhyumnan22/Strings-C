@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+int main() {
+    char str[100], ch;
+    int i, len;
+    int flag = 0; 
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = '\0'; 
+    scanf(" %c", &ch);
+    len = strlen(str);
+    for (i = 0; i < len; i++) {
+        if (str[i] == ch) {
+            flag = i; 
+        }
+    }
+    if (flag != 0) {
+        printf("Last occurrence is at index %d\n", flag);
+    } else {
+        printf("NOT FOUND!\n");
+    }
+}
