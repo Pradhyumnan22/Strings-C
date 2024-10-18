@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<ctype.h>
+int main(){
+    char str[100];
+    int freq[256]={0};
+    int len,i;
+    fgets(str,sizeof str, stdin);
+    str[strcspn(str,"\n")]='\0';
+    len=strlen(str);
+    for(i=0; len>i; i++){
+        freq[str[i]]++;
+    }
+    for(i=0; 256>i; i++){
+        if(freq[i]>0){
+            printf("Frequency of %c : %d\n",i,freq[i]);
+        }
+    }
+}
