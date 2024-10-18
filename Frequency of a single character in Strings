@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<ctype.h>
+int main(){
+    char str[100],ch;
+    int i,j,len;
+    int count=0;
+    fgets(str, sizeof str, stdin);
+    str[strcspn(str,"\n")]='\0';
+    scanf("%c",&ch);
+    for(i=0; str[i]!='\0';i++){
+        if(str[i]==ch){
+            count++;
+        }
+    }
+    if(count!=0){
+        printf("Total occurence is %d",count);
+    }
+    else{
+        printf("Not found");
+    }
+}
