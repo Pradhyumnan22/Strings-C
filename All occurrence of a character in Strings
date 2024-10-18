@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<ctype.h>
+int main(){
+    char str[100],ch;
+    int i,j,len;
+    int flag=0;
+    fgets(str, sizeof str, stdin);
+    str[strcspn(str,"\n")]='\0';
+    scanf("%c",&ch);
+    for(i=0; str[i]!='\0';i++){
+        if(str[i]==ch){
+            printf("Occurrence is at %d\n",i);
+            flag = 1;
+        }
+    }
+    if(flag==0){
+        printf("Not found");
+    }
+}
