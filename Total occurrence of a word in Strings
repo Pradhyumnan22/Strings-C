@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<ctype.h>
+int main(){
+    char str[100],ch[100];
+    int i,j,len1,len2;
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    fgets(ch,sizeof(ch),stdin);
+    ch[strcspn(ch,"\n")]='\0';
+    len1=strlen(str);
+    len2=strlen(ch);
+    for(i=0;len1-len2>i;i++){
+        for(j=0;len2>j;j++){
+            if(str[i+j]!=ch[j]){
+                break;
+            }
+        }
+        if(j==len2){
+            printf("Found at %d\n",i);
+        }
+    }
+}
