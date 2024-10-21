@@ -1,0 +1,19 @@
+#include<string.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+int main(){
+    char str[100],ch;
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    int len=strlen(str);
+    for(int i=0;len>i;i++){
+        if(islower(str[i])){
+            str[i]=toupper(str[i]);
+        }
+        else if(isupper(str[i])){
+            str[i]=tolower(str[i]);
+        }
+    }
+    printf("%s",str);
+}
