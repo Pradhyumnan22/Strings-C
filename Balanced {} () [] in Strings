@@ -1,0 +1,54 @@
+#include<string.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+int main(){
+    char str[100],ch;
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    int roundbra=0;
+    int curl=0,i=0;
+    int bracket=0;
+    int flag=1;
+    while(str[i]!='\0')
+    {
+        ch=str[i];
+        if(ch=='('){
+            roundbra++;
+        }
+        else if(ch=='{'){
+            curl++;
+        }
+        else if(ch=='['){
+            bracket++;
+            
+        }
+        else if(ch==')'){
+            if(roundbra==0){
+                flag=0;
+            }
+            roundbra--;
+        }
+         else if(ch=='}'){
+            if(curl==0){
+                flag=0;
+                break;
+            }
+            curl--;
+        }
+         else if(ch==']'){
+            if(bracket==0){
+                flag=0;
+                break;
+            }
+            bracket--;
+        }
+        i++;
+    }
+    if(flag && bracket==0 && curl==0 && roundbra==0){
+        printf("Yes");
+    }
+    else{
+        printf("False");
+    }
+}
