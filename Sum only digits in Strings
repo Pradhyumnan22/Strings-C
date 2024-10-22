@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char str[50];
+    fgets(str,50,stdin);
+    str[strcspn(str,"\n")]='\0';
+    int i=0,sum,j;
+    for(i=0;i<strlen(str);i++)
+    {
+        if(isdigit(str[i]))
+        {
+            sum=str[i]-48;
+            j=sum+j;
+            
+        }
+    }
+    printf("%d",j);
+}
