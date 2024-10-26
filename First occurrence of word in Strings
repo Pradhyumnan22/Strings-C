@@ -11,7 +11,7 @@ int main(){
     ch[strcspn(ch,"\n")]='\0';
     len1=strlen(str);
     len2=strlen(ch);
-    for(i=0;len1-len2>i;i++){
+    for(i=0;len1-len2>=i;i++){
         for(j=0;len2>j;j++){
             if(str[i+j]!=ch[j]){
                break;
