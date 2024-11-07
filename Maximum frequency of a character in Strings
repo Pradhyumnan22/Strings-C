@@ -6,12 +6,13 @@ int main(){
     char str[50];
     fgets(str,sizeof(str), stdin);
     str[strcspn(str,"\n")]='\0';
-    int i,j,count,tempcount=0;
+    int i,j,len,count,tempcount=0;
     char ch,tempchar;
-    for(i=0; str[i]!='\0'; i++){
+    len=strlen(str);
+    for(i=0; len>i; i++){
         count=0;
         ch=str[i];
-        for(j=0;str[j]!='\0'; j++){
+        for(j=0;len>j; j++){
             if(str[j]==ch){
                 count++;
             }
